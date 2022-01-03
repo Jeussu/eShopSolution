@@ -15,6 +15,7 @@ namespace eShopSolution.Data.Configurations
         {
             builder.ToTable("OrderDetails");
 
+
             builder.HasKey(x => new { x.OrderId, x.ProductId });
 
             builder.HasOne(x => x.Order).WithMany(x => x.OrderDetails).HasForeignKey(x => x.OrderId);
